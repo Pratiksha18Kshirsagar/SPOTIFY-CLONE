@@ -67,6 +67,7 @@ body {
 
 .right{
     margin: 16px 0;
+    position: relative;
 }
  
 .header{
@@ -139,10 +140,25 @@ body {
 .loginbtn{
     padding: 10px;
     border-radius: 50px;
-    font-weight: bold;
-    width: 80px;
+    
+    width: 70px;
     cursor: pointer;
 }
 .loginbtn:hover{
+    font-weight: bold;
+    width: 80px;
    
+}
+.playBar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    padding: 12px;
+}
+
+.songbuttons{
+    display: flex;
+    justify-content: center;
+    gap: 13px;
 }
