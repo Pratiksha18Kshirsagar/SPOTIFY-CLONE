@@ -14,7 +14,7 @@ body {
     font-family: Roboto;
 }
 .left {
-    width: 25vw;
+    width: 45vw;
     padding: 10px;
 }
 
@@ -150,15 +150,53 @@ body {
    
 }
 .playBar{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    position: fixed;
+    bottom: 30px;
+    width: 55vw;
     background-color: gray;
-    padding: 12px;
+    padding: 10px;
+    border-radius: 25px;
+    
 }
 
 .songbuttons{
     display: flex;
     justify-content: center;
     gap: 13px;
+}
+
+.songList ul{
+    padding: 0 12px;
+}
+
+.songList ul li{
+    list-style-type: decimal;
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+    padding: 12px 0;
+    border: 1px solid white;
+    margin: 12px 0;
+    padding: 13px;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.playNow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.playNow span{
+    width: 100px;
+    font-size: 15px;
+  
+  
+}
+
+.songList{
+    height: 344px;
+    overflow: auto;
+    margin-bottom: 44px 0;
 }
