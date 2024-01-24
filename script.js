@@ -1,3 +1,10 @@
+let currentSong = new Audio();
+console.log(currentSong);
+
+
+
+
+
 console.log("lets write some javascript!!")
 
 async function getSongs() {
@@ -25,11 +32,16 @@ async function getSongs() {
     return songs;
 }
 
-
+function playMusic(track) {
+    // let audio = new Audio("/songs!!/" + track);
+    currentSong.src = "/songs!!/" + track;
+    currentSong.play();
+}
 
 async function main() {
 
     //list the songs
+
     let song = await getSongs();
     console.log(song);
 
@@ -48,14 +60,24 @@ async function main() {
     </li>`;
 
     }
-    //play the first song
-    var audio = new Audio(song[0]);
-    audio.play();
 
-    audio.addEventListener("loadeddata", () => {
+    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
+        e.addEventListener("click", () => {
+            playMusic(e.querySelector(".songInfo").firstElementChild.innerHTML);
+        })
 
-        console.log(audio.duration, audio.currentSrc, audio.currentTime);
-    });
+    })
+
+
+    //Attach a addEvent Listener to play , next and previous !!
+    play.addEventListener("click", () => {
+        if (currentSong.paused) {
+            currentSong.play();
+        }
+        else {
+            currentSong.pause();
+        }
+    })
 
 
 

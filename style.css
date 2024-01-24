@@ -150,12 +150,13 @@ body {
    
 }
 .playBar{
+    height: 30px;
     position: fixed;
     bottom: 30px;
     width: 55vw;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.45);
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 20px;
     
 }
 
@@ -178,7 +179,7 @@ body {
     border: 1px solid white;
     margin: 12px 0;
     padding: 13px;
-    border-radius: 5px;
+    border-radius: 25px;
     justify-content: space-between;
 }
 
@@ -199,4 +200,30 @@ body {
     height: 344px;
     overflow: auto;
     margin-bottom: 44px 0;
+}
+
+.seekBar{
+    height: 2px;
+    width: 97%;
+    background: black;
+    position:absolute;
+    bottom: 0;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+.circle{
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    background-color:peachpuff;
+    position: relative;
+    bottom: 6px;
+    left: 0%;
+    transition: left 0.5s;
+
+}
+
+.songbuttons img{
+    cursor: pointer;
 }
