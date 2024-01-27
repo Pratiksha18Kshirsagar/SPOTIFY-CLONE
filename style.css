@@ -1,20 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap') ;
 
-
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 
 body {
-    background-color: rgb(179, 145, 145);
+    background-color: black;
     color: white;
     font-family: Roboto;
 }
+
 .left {
-    width: 45vw;
+    width: 30vw;
     padding: 10px;
 }
 
@@ -22,7 +22,7 @@ body {
     width: 75vw;
 }
 
-.home ul li{
+.home ul li {
     display: flex;
     gap: 15px;
     list-style: none;
@@ -30,10 +30,12 @@ body {
     padding-top: 14px;
     font-weight: bold;
 }
-.home{
+
+.home {
     padding: 10px;
 }
-.heading{
+
+.heading {
     display: flex;
     gap: 15px;
     width: 100%;
@@ -43,14 +45,17 @@ body {
     font-weight: bold;
     font-size: 13px;
 }
-.heading img{
+
+.heading img {
     width: 30px;
 }
-.library{
+
+.library {
     min-height: 80vh;
     position: relative;
 }
-.footer{
+
+.footer {
     display: flex;
     gap: 13px;
     color: grey;
@@ -59,59 +64,61 @@ body {
     bottom: 0;
 
 }
-.footer a{
+
+.footer a {
     color: grey;
     text-decoration: none;
 }
 
 
-.right{
+.right {
     margin: 16px 0;
     position: relative;
 }
- 
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(34, 34,34);
+    background-color: rgb(34, 34, 34);
 }
 
-.header > *{
+.header>* {
     padding: 20px;
 }
-.spotifyPlaylist{
+
+.spotifyPlaylist {
     padding: 16px;
 }
 
-.cardContainer{
+.cardContainer {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-     margin: 30px;
-     overflow-y: scroll;
-     max-height: 70vh;
+    margin: 30px;
+    overflow-y: scroll;
+    max-height: 70vh;
 }
 
 
- .card{
+.card {
     width: 200px;
     padding: 10px;
     border-radius: 5px;
     background-color: #252525;
-    position:relative;
-   
+    position: relative;
+
 }
 
-.card > *{
+.card>* {
     padding-top: 10px;
 }
 
-.card img{
+.card img {
     width: 100%;
     object-fit: contain;
 }
 
-.play img{
+.play img {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -121,35 +128,38 @@ body {
     transition: all 1s ease-out;
 }
 
-.button > *{
+.button>* {
     margin: 0 10px;
 }
 
-.signupbtn{
+.signupbtn {
     color: grey;
-    background-color:rgb(34, 34,34);
+    background-color: rgb(34, 34, 34);
     border: none;
     cursor: pointer;
 }
-.signupbtn:hover{
-    font-weight:bold ;
+
+.signupbtn:hover {
+    font-weight: bold;
     color: white;
     font-size: 1rem;
 }
 
-.loginbtn{
+.loginbtn {
     padding: 10px;
     border-radius: 50px;
-    
+
     width: 70px;
     cursor: pointer;
 }
-.loginbtn:hover{
+
+.loginbtn:hover {
     font-weight: bold;
     width: 80px;
-   
+
 }
-.playBar{
+
+.playBar {
     height: 30px;
     position: fixed;
     bottom: 30px;
@@ -157,20 +167,20 @@ body {
     background-color: rgba(128, 128, 128, 0.45);
     padding: 10px;
     border-radius: 20px;
-    
+
 }
 
-.songbuttons{
+.songbuttons {
     display: flex;
     justify-content: center;
     gap: 13px;
 }
 
-.songList ul{
+.songList ul {
     padding: 0 12px;
 }
 
-.songList ul li{
+.songList ul li {
     list-style-type: decimal;
     display: flex;
     gap: 12px;
@@ -183,47 +193,89 @@ body {
     justify-content: space-between;
 }
 
-.playNow{
+.playNow {
     display: flex;
     justify-content: center;
     align-items: center;
-   
-}
-.playNow span{
-    width: 100px;
-    font-size: 15px;
-  
-  
+
 }
 
-.songList{
+.playNow span {
+    width: 100px;
+    font-size: 15px;
+
+
+}
+
+.songList {
     height: 344px;
     overflow: auto;
     margin-bottom: 44px 0;
 }
 
-.seekBar{
-    height: 2px;
+.seekBar {
+    height: 4px;
     width: 97%;
     background: black;
-    position:absolute;
+    position: absolute;
     bottom: 0;
     border-radius: 10px;
     margin: 4px;
+    cursor: pointer;
 }
 
-.circle{
+.circle {
     width: 13px;
     height: 13px;
     border-radius: 13px;
-    background-color:peachpuff;
+    background-color: peachpuff;
     position: relative;
     bottom: 6px;
     left: 0%;
     transition: left 0.5s;
 
+
 }
 
-.songbuttons img{
+.songbuttons img {
     cursor: pointer;
+}
+
+.songbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hamburger{
+    display: none;
+}
+
+.hamburgerCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+@media screen and (max-width : 1100px) {
+    .left {
+        background-color: black;
+        position: absolute;
+        left: -100%;
+        z-index: 1;
+        transition: all .3s;
+        width: 233px;
+    }
+
+    .right {
+        width: 100vw;
+    }
+
+    .playBar {
+        width: 90vw;
+    }
+    .hamburger{
+        display: block;
+        /* filter: invert(1); */
+    }
 }
