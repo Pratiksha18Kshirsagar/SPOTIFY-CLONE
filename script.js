@@ -44,7 +44,7 @@ function playMusic(track, pause = false) {
     }
 
     document.querySelector(".songinfo").innerHTML = track;
-    document.querySelector(".songtime").innerHTML = "00:00";
+    document.querySelector(".songtime").innerHTML = "00:00/00:00";
 }
 
 async function main() {
@@ -111,6 +111,12 @@ async function main() {
     document.querySelector(".hamburgerCont").addEventListener("click", () => {
         document.querySelector(".left").style.left = "0";
     })
+
+
+        //Add a event listner to close class!!
+        document.querySelector(".close").addEventListener("click", () => {
+            document.querySelector(".left").style.left = "-230%";
+        })
 
 }
 
