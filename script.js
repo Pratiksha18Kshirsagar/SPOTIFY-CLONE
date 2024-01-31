@@ -1,3 +1,5 @@
+
+let song;
 let currentSong = new Audio();
 console.log(currentSong);
 
@@ -51,7 +53,7 @@ async function main() {
 
     //list the songs
 
-    let song = await getSongs();
+     song = await getSongs();
     playMusic(song[0], true)
     console.log(song);
     let songUl = document.querySelector(".songList").getElementsByTagName('ul')[0];
@@ -116,6 +118,18 @@ async function main() {
         //Add a event listner to close class!!
         document.querySelector(".close").addEventListener("click", () => {
             document.querySelector(".left").style.left = "-230%";
+        })
+
+
+        previous.addEventListener("click" , ()=>{
+            console.log(previous);
+           console.log("lol");
+        })
+
+        next.addEventListener("click" , ()=>{
+            console.log(next);
+            console.log("lol");
+
         })
 
 }
