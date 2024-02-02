@@ -1,5 +1,6 @@
 
 let song;
+let songUl;
 let currentSong = new Audio();
 console.log(currentSong);
 
@@ -21,7 +22,7 @@ function secondsToMinutes(seconds) {
 async function getSongs() {
     let a = await fetch('http://127.0.0.1:3000/songs!!/');
     let response = await a.text();
-    console.log(response)
+    console.log(response);
     let div = document.createElement('div');
     div.innerHTML = response;
     let as = div.getElementsByTagName('a');
@@ -53,10 +54,10 @@ async function main() {
 
     //list the songs
 
-     song = await getSongs();
+    song = await getSongs();
     playMusic(song[0], true)
-    console.log(song);
-    let songUl = document.querySelector(".songList").getElementsByTagName('ul')[0];
+    console.log(song); 
+    songUl = document.querySelector(".songList").getElementsByTagName('ul')[0];
     for (const s of song) {
         songUl.innerHTML = songUl.innerHTML + `<li><img class="invert" src="./music.svg" alt="">
     <div class="songInfo">
@@ -115,22 +116,37 @@ async function main() {
     })
 
 
-        //Add a event listner to close class!!
-        document.querySelector(".close").addEventListener("click", () => {
-            document.querySelector(".left").style.left = "-230%";
-        })
+    //Add a event listner to close class!!
+    document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector(".left").style.left = "-230%";
+    })
+
+    //previous and next button 
+    previous.addEventListener("click", () => {
+        console.log(currentSong);
+        console.log("lol");
+        let index = song.indexOf(currentSong.src.split("/").slice(-1)[0]);
+        if ((index - 1) >= 0) {
+            playMusic(song[index - 1]);
+        }
+
+    })
+
+    next.addEventListener("click", () => {
+        console.log(next);
+        console.log("lol");
+        let index = song.indexOf(currentSong.src.split("/").slice(-1)[0]);
+        if ((index + 1) > length) {
+            playMusic(song[index + 1]);
+        }
+
+        // console.log(currentSong.src);
+        // console.log(currentSong.src.split("/"));
+        // console.log(currentSong.src.split("/").slice(-1)[0])
 
 
-        previous.addEventListener("click" , ()=>{
-            console.log(previous);
-           console.log("lol");
-        })
 
-        next.addEventListener("click" , ()=>{
-            console.log(next);
-            console.log("lol");
-
-        })
+    })
 
 }
 
