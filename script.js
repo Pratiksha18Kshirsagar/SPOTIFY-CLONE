@@ -8,6 +8,9 @@ console.log("lets write some javascript!!")
 
 
 function secondsToMinutes(seconds) {
+    if(isNaN(seconds) || seconds < 0 ){
+        return '00:00';
+    }
     // Calculate minutes and remaining seconds
     var minutes = Math.floor(seconds / 60);
     var remainingSeconds = (seconds % 60).toFixed(0);
@@ -46,7 +49,7 @@ function playMusic(track, pause = false) {
         play.src = "pause.svg";
     }
 
-    document.querySelector(".songinfo").innerHTML = track;
+    document.querySelector(".songinfo").innerHTML = track.replaceAll("%20" , " ");
     document.querySelector(".songtime").innerHTML = "00:00/00:00";
 }
 
@@ -61,7 +64,7 @@ async function main() {
     for (const s of song) {
         songUl.innerHTML = songUl.innerHTML + `<li><img class="invert" src="./music.svg" alt="">
     <div class="songInfo">
-        <div>${s.replaceAll("%20", " ")}</div>
+         <div>${s.replaceAll("%20"," ")}</div>
         <div>Pratiksha.</div>
     </div>
     <div class="playNow">
@@ -136,7 +139,7 @@ async function main() {
         console.log(next);
         console.log("lol");
         let index = song.indexOf(currentSong.src.split("/").slice(-1)[0]);
-        if ((index + 1) > length) {
+        if ((index + 1) >= length) {
             playMusic(song[index + 1]);
         }
 
