@@ -2,6 +2,7 @@
 let song;
 let songUl;
 let currentSong = new Audio();
+let currFolder;
 console.log(currentSong);
 
 console.log("lets write some javascript!!")
@@ -23,7 +24,8 @@ function secondsToMinutes(seconds) {
 }
 
 async function getSongs() {
-    let a = await fetch('http://127.0.0.1:3000/songs!!/');
+    
+    let a = await fetch("http://127.0.0.1:3000/songs/");
     let response = await a.text();
     console.log(response);
     let div = document.createElement('div');
@@ -34,7 +36,7 @@ async function getSongs() {
     for (let i = 0; i < as.length; i++) {
         const element = as[i];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs!!/")[1])
+            songs.push(element.href.split("/songs/")[1])
         }
     }
     console.log(songs);
@@ -43,7 +45,7 @@ async function getSongs() {
 
 function playMusic(track, pause = false) {
     // let audio = new Audio("/songs!!/" + track);
-    currentSong.src = "/songs!!/" + track;
+    currentSong.src = "/songs/" + track;
     if (!pause) {
         currentSong.play();
         play.src = "pause.svg";
@@ -57,7 +59,7 @@ async function main() {
 
     //list the songs
 
-    song = await getSongs();
+    song = await getSongs("/songs");
     playMusic(song[0], true)
     console.log(song);
     songUl = document.querySelector(".songList").getElementsByTagName('ul')[0];
@@ -156,11 +158,11 @@ async function main() {
     })
 
     //Add event to volume
-    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change" , (e)=>{
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         // console.log(e);
         // console.log(e.target);
         // console.log(e.target.value);
-        currentSong.volume = parseInt(e.target.value)/100;
+        currentSong.volume = parseInt(e.target.value) / 100;
     })
 
 }

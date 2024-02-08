@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root{
+    --a:0;
+}
 
 * {
     margin: 0;
@@ -113,7 +116,16 @@ body {
     border-radius: 5px;
     background-color: #252525;
     position: relative;
+    transition: all .9s;
+    
 
+}
+
+.card:hover{
+    background-color: rgba(128, 125, 125, 0.749);
+    cursor: pointer;
+    --a: 1;
+    
 }
 
 .card>* {
@@ -125,15 +137,17 @@ body {
     object-fit: contain;
 }
 
+
 .play img {
     width: 50px;
     height: 50px;
     position: absolute;
     top: 170px;
     right: 15px;
-    opacity: 0;
+    opacity: var(--a);
     transition: all 1s ease-out;
 }
+
 
 .button>* {
     margin: 0 10px;
@@ -232,7 +246,7 @@ body {
 }
 
 .seekBar {
-    height: 4px;
+    height: 5px;
     width: 97%;
     background: black;
     position: absolute;
@@ -243,8 +257,8 @@ body {
 }
 
 .circle {
-    width: 13px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
     border-radius: 13px;
     background-color: peachpuff;
     position: relative;
